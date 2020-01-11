@@ -8,7 +8,7 @@ public class HelloController {
 	
 	@RequestMapping("/hello")
 	public String greetings() {
-		return "Hello there! How are you?";
+		return "Hello there! How are you?.....   " + System.getenv("HOSTNAME");
 	}
 
 }
