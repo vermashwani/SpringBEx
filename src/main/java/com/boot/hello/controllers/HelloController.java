@@ -42,20 +42,10 @@ public class HelloController {
 	@RequestMapping("/cm")
 	public String readConfig(){
 		   StringBuffer sb = new StringBuffer();
-        try (InputStream input = new FileInputStream("/opt/app-root/myapp.config")) {
-
-            Properties prop = new Properties();
-
-            // load a properties file
-            prop.load(input);
-
-            // get the property value and print it out
+        
          
-            sb.append(prop.getProperty("welcome.message")).append("--------").append(prop.getProperty("current.environment")).append("------");
+            sb.append(System.getenv("welcome.message")).append("--------").append(System.getenv("current.environment")).append("------");
             
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
         return sb.toString();
     }
 }
