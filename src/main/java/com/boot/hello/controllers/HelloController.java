@@ -65,8 +65,8 @@ public class HelloController {
             
         return sb.toString();
     }
-
-    	public ResponseEntity<?> checkHealth(){
+    @RequestMapping("/healthz")
+    public ResponseEntity<?> checkHealth(){
 		String message=null;
 		HttpStatus status;
 		if (healthy) {
