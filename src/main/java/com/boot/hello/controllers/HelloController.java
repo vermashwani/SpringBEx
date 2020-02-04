@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.io.StringReader;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,6 +37,19 @@ public class HelloController {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        return sb.toString();
+    }
+	
+	@RequestMapping("/config")
+	public String readConfiguration() {
+	StringBuffer sb = new StringBuffer();
+		 Properties prop = new Properties();
+		String str = System.getenv("HELLO_MESSAGE");
+		prop.load(new StringReader(str));
+sb.append(prop.getProperty("MESSAGE"));
+
+		
+		
         return sb.toString();
     }
 	
