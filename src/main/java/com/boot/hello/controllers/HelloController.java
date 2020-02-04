@@ -43,13 +43,14 @@ public class HelloController {
 	@RequestMapping("/config")
 	public String readConfiguration() {
 	StringBuffer sb = new StringBuffer();
-		 Properties prop = new Properties();
-		String str = System.getenv("HELLO_MESSAGE");
-		prop.load(new StringReader(str));
-sb.append(prop.getProperty("MESSAGE"));
-
-		
-		
+	try{
+	 Properties prop = new Properties();
+	 String str = System.getenv("HELLO_MESSAGE");
+	 prop.load(new StringReader(str));
+  	 sb.append(prop.getProperty("MESSAGE"));
+     } catch (IOException ex) {
+            ex.printStackTrace();
+        }
         return sb.toString();
     }
 	
