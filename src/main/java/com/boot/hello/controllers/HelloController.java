@@ -95,7 +95,7 @@ public class HelloController {
 		return new ResponseEntity<String>(message,status);
     }
 	@RequestMapping("/flip")
-	public ResponseEntity<?> flip(@RequestParam("op") String flag){
+	public ResponseEntity<?> flip(@RequestParam(name = "op") String flag){
 		String message=null;
 		 if (flag == "kill") {
 			  message = "Received kill request. Changing app state to unhealthy...\n Switched app state to unhealthy...\\n";
