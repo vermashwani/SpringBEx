@@ -44,7 +44,7 @@ public class HelloController {
 		   StringBuffer sb = new StringBuffer();
         
          
-            sb.append(System.getenv("welcome_message")).append("--------").append(System.getenv("NAME1")).append("------");
+            sb.append(System.getenv("WELCOME_MESSAGE")).append("--------").append(System.getenv("NAME1")).append("------").append(System.getenv("KEY1"));
             
         return sb.toString();
     }
