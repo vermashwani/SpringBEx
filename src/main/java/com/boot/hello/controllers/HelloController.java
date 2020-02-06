@@ -85,6 +85,8 @@ public class HelloController {
 		HttpStatus status;
 		long now =(System.currentTimeMillis() / 1000) % 60;
 		long diff = now - started;
+
+		System.out.println("Now="+now+" Started="+started+" Difference="+diff)
 		if (diff > 30) {
 			 message = "ping /ready => pong [ready]";
 			status = HttpStatus.OK;
@@ -115,5 +117,6 @@ public class HelloController {
 	public HelloController() {
 		// TODO Auto-generated constructor stub
 		started = (System.currentTimeMillis() / 1000) % 60;
+		System.out.println("In constructor -----------------> "+started)
 	}
 }
