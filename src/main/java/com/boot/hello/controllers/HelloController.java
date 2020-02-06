@@ -117,6 +117,6 @@ public class HelloController {
 	public HelloController() {
 		// TODO Auto-generated constructor stub
 		started = (System.currentTimeMillis() / 1000) % 60;
-		System.out.println("In constructor -----------------> "+started)
+		System.out.println("In constructor -----------------> "+started);
 	}
 }
