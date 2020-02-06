@@ -86,7 +86,7 @@ public class HelloController {
 		long now =(System.currentTimeMillis() / 1000) % 60;
 		long diff = now - started;
 
-		System.out.println("Now="+now+" Started="+started+" Difference="+diff)
+		System.out.println("Now="+now+" Started="+started+" Difference="+diff);
 		if (diff > 30) {
 			 message = "ping /ready => pong [ready]";
 			status = HttpStatus.OK;
