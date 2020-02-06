@@ -113,10 +113,10 @@ public class HelloController {
     }
 
     boolean healthy=true;
-	long started;
-	public HelloController() {
+	public static long started = ((System.currentTimeMillis() / 1000) % 60);
+	//public HelloController() {
 		// TODO Auto-generated constructor stub
-		started = (System.currentTimeMillis() / 1000) % 60;
-		System.out.println("In constructor -----------------> "+started);
-	}
+	//	started = (System.currentTimeMillis() / 1000) % 60;
+	//	System.out.println("In constructor -----------------> "+started);
+	//}
 }
