@@ -86,7 +86,7 @@ public class HelloController {
 		long now =(System.currentTimeMillis() / 1000) % 60;
 		long diff = now - started;
 
-		System.out.println("Now="+now+" Started="+started+" Difference="+diff);
+		String mes1="Now="+now+" Started="+started+" Difference="+diff;
 		if (diff > 30) {
 			 message = "ping /ready => pong [ready]";
 			status = HttpStatus.OK;
@@ -95,7 +95,7 @@ public class HelloController {
 			status = HttpStatus.SERVICE_UNAVAILABLE;
 		}
 		System.out.println(message);
-		return new ResponseEntity<String>(message,status);
+		return new ResponseEntity<String>(message+" \n"+mes1,status);
     }
 	@RequestMapping("/flip")
 	public ResponseEntity<?> flip(@RequestParam(name = "op") String flag){
